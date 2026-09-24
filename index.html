@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Manufacturing & Trading Company - Quality Products, Global Service">
-    <title>GlobalTrade Pro | 全球贸易专家</title>
+    <title>Elesler Hainan Trading Co.,Ltd | 伊莱斯勒</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
     <style>
         /* ============================================
@@ -89,16 +89,10 @@
             color: var(--primary);
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -202,6 +196,16 @@
             position: relative;
             z-index: 2;
             max-width: 700px;
+        }
+
+        .hero-logo {
+            margin-bottom: 28px;
+        }
+
+        .hero-logo img {
+            height: 72px;
+            width: auto;
+            filter: drop-shadow(0 2px 12px rgba(0,0,0,0.3));
         }
 
         .hero-badge {
@@ -952,8 +956,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="#home" class="logo">
-                <div class="logo-icon">🌐</div>
-                <span data-i18n="logo">GlobalTrade Pro</span>
+                <img src="logo.png" alt="Elesler Hainan Trading Co.,Ltd" class="logo-img">
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#home" data-i18n="nav_home">Home</a>
@@ -976,9 +979,12 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="logo.png" alt="Elesler Hainan Trading Co.,Ltd">
+                </div>
                 <div class="hero-badge">🌍 <span data-i18n="hero_badge">Serving Global Clients Since 2010</span></div>
                 <h1 data-i18n="hero_title">Connecting <span data-i18n="hero_highlight">China's Best</span> <span data-i18n="hero_title2">to the World</span></h1>
-                <p data-i18n="hero_desc">We are a professional manufacturing and trading company committed to delivering high-quality products and reliable services to global partners. From concept to delivery, we make international trade simple.</p>
+                <p data-i18n="hero_desc">We are a professional Chinese trading company specializing in seamless cross-border commerce between China and global markets. With a <strong>VTB Bank account</strong>, we offer direct and efficient financial channels for <strong>China-Russia trade</strong>, ensuring fast and secure transactions. Our extensive supplier network and years of industry experience enable us to deliver high-quality products at competitive prices with reliable logistics. <strong>Growing together with our clients</strong> is not just our mission — it's our promise. We are committed to building long-term partnerships based on trust, transparency, and mutual success.</p>
                 <div class="hero-actions">
                     <a href="#products" class="btn btn-primary" data-i18n="hero_btn1">📦 Explore Products</a>
                     <a href="#contact" class="btn btn-outline" data-i18n="hero_btn2">💬 Get a Quote</a>
@@ -1278,29 +1284,29 @@
                     <div class="info-card">
                         <div class="info-icon">📍</div>
                         <div class="info-text">
-                            <h4 data-i18n="info_addr_title">Address</h4>
-                            <p data-i18n="info_addr">No. 888 Innovation Road, Industrial Zone, Guangzhou, China 510000</p>
+                            <h4>Elesler Hainan Trading Co.,Ltd</h4>
+                            <p>Hainan, China</p>
                         </div>
                     </div>
                     <div class="info-card">
                         <div class="info-icon">📧</div>
                         <div class="info-text">
                             <h4>Email</h4>
-                            <p>trade@globaltradepro.com</p>
+                            <p>ylsl_hntc@126.com</p>
                         </div>
                     </div>
                     <div class="info-card">
                         <div class="info-icon">📞</div>
                         <div class="info-text">
-                            <h4 data-i18n="info_phone_title">Phone</h4>
-                            <p>+86 20 8888 6666</p>
+                            <h4>Phone</h4>
+                            <p>130-1139-2747 / 130-1139-2941</p>
                         </div>
                     </div>
                     <div class="info-card">
                         <div class="info-icon">💬</div>
                         <div class="info-text">
-                            <h4>WhatsApp</h4>
-                            <p>+86 138 0000 8888</p>
+                            <h4>WhatsApp / WeChat</h4>
+                            <p>130-1139-2747 / 130-1139-2941</p>
                         </div>
                     </div>
                     <div class="info-card">
@@ -1338,7 +1344,7 @@
         // ============================================
         const translations = {
             en: {
-                logo: "GlobalTrade Pro",
+                logo: "伊莱斯勒 YI LAI SI LE",
                 nav_home: "Home",
                 nav_about: "About",
                 nav_products: "Products",
@@ -1348,7 +1354,7 @@
                 hero_title: "Connecting",
                 hero_highlight: "China's Best",
                 hero_title2: "to the World",
-                hero_desc: "We are a professional manufacturing and trading company committed to delivering high-quality products and reliable services to global partners. From concept to delivery, we make international trade simple.",
+                hero_desc: "We are a professional Chinese trading company with a <strong>VTB Bank account</strong>, ensuring seamless <strong>China-Russia trade</strong>. With strong supplier networks and years of export experience, we deliver quality products, competitive prices, and reliable global logistics. <strong>Growing together with our clients</strong> is our core mission.",
                 hero_btn1: "📦 Explore Products",
                 hero_btn2: "💬 Get a Quote",
                 stat_countries: "Countries Served",
@@ -1377,10 +1383,10 @@
                 p6_cat: "Furniture", p6_title: "Office & Industrial", p6_desc: "Ergonomic office and industrial furniture with modern design and durability",
                 about_tag: "About Us",
                 about_title: "Your Trusted Partner in Global Trade",
-                about_desc1: "Founded in 2010, GlobalTrade Pro has grown from a small trading office into a comprehensive manufacturing and trading enterprise. We bridge the gap between Chinese manufacturing excellence and global market demands.",
-                about_desc2: "With a modern factory spanning 20,000 sqm, 200+ skilled workers, and a dedicated export team, we handle everything from product development to international logistics.",
+                about_desc1: "We are a professional Chinese trading company specializing in seamless cross-border commerce. With a VTB Bank account, we offer direct and efficient financial channels for China-Russia trade, ensuring fast and secure transactions.",
+                about_desc2: "Our extensive supplier network and years of industry experience enable us to deliver high-quality products at competitive prices with reliable logistics. Growing together with our clients is not just our mission — it's our promise.",
                 about_badge: "Years of Excellence",
-                af1: "20,000 sqm Factory", af2: "200+ Employees", af3: "ISO 9001 Certified", af4: "Top 100 Exporter",
+                af1: "Hainan, China", af2: "Professional Team", af3: "VTB Bank Account", af4: "China-Russia Trade",
                 case_tag: "Success Stories",
                 case_title: "Client Testimonials",
                 case_desc: "Hear from our partners around the world",
@@ -1395,14 +1401,14 @@
                 f_opt1: "Precision Components", f_opt2: "Smart Devices", f_opt3: "Professional Tools",
                 f_opt4: "Building Materials", f_opt5: "Custom Packaging", f_opt6: "Other",
                 f_message: "Message *", f_submit: "🚀 Send Inquiry",
-                info_addr_title: "Address", info_addr: "No. 888 Innovation Road, Industrial Zone, Guangzhou, China 510000",
+                info_addr_title: "Company", info_addr: "Elesler Hainan Trading Co.,Ltd - Hainan, China",
                 info_phone_title: "Phone", info_hours_title: "Business Hours",
                 info_hours: "Mon - Fri: 9:00 AM - 6:00 PM (GMT+8)",
-                footer_copy: "© 2026 GlobalTrade Pro. All rights reserved.",
+                footer_copy: "© 2026 Elesler Hainan Trading Co.,Ltd. All rights reserved.",
                 footer_privacy: "Privacy Policy", footer_terms: "Terms of Service", footer_contact: "Contact Us"
             },
             zh: {
-                logo: "环球贸易通",
+                logo: "伊莱斯勒",
                 nav_home: "首页",
                 nav_about: "关于我们",
                 nav_products: "产品中心",
@@ -1412,7 +1418,7 @@
                 hero_title: "连接",
                 hero_highlight: "中国制造",
                 hero_title2: "，通达全球",
-                hero_desc: "我们是一家专业的制造贸易企业，致力于为全球合作伙伴提供高品质产品和可靠服务。从概念到交付，让国际贸易变得简单。",
+                hero_desc: "我们是一家专业的中国贸易公司，专注于中国与全球市场之间的无缝跨境贸易。持有<strong>VTB银行账户</strong>，为<strong>中俄贸易</strong>提供直接高效的金融通道，确保交易快速安全。凭借强大的供应商网络和多年行业经验，我们为客户提供高品质、有竞争力价格的产品和可靠物流服务。<strong>与客户共同成长</strong>不仅是我们的使命，更是我们的承诺。我们致力于建立基于信任、透明和互利共赢的长期合作伙伴关系。",
                 hero_btn1: "📦 浏览产品",
                 hero_btn2: "💬 获取报价",
                 stat_countries: "服务国家",
@@ -1441,10 +1447,10 @@
                 p6_cat: "家具", p6_title: "办公与工业家具", p6_desc: "人体工学办公和工业家具，现代设计，经久耐用",
                 about_tag: "关于我们",
                 about_title: "值得信赖的全球贸易伙伴",
-                about_desc1: "成立于2010年，环球贸易通从一个小贸易公司成长为综合性制造贸易企业。我们架起了中国制造优势与全球市场需求之间的桥梁。",
-                about_desc2: "拥有20,000平方米现代化厂房、200多名技术工人和专业出口团队，从产品研发到国际物流，我们全流程负责。",
+                about_desc1: "我们是一家专业的中国贸易公司，专注于跨境贸易。持有VTB银行账户，为中俄贸易提供直接高效的金融通道，确保交易快速安全。",
+                about_desc2: "凭借强大的供应商网络和多年行业经验，我们为客户提供高品质、有竞争力价格的产品和可靠物流服务。与客户共同成长不仅是我们的使命，更是我们的承诺。",
                 about_badge: "年卓越经营",
-                af1: "2万平米工厂", af2: "200+名员工", af3: "ISO 9001认证", af4: "百强出口企业",
+                af1: "海南总部", af2: "专业团队", af3: "VTB银行账户", af4: "中俄贸易通道",
                 case_tag: "成功故事",
                 case_title: "客户好评",
                 case_desc: "来自全球合作伙伴的真实评价",
@@ -1459,10 +1465,10 @@
                 f_opt1: "精密零部件", f_opt2: "智能设备", f_opt3: "专业工具",
                 f_opt4: "建材产品", f_opt5: "定制包装", f_opt6: "其他",
                 f_message: "留言 *", f_submit: "🚀 发送询盘",
-                info_addr_title: "公司地址", info_addr: "中国广州市工业区创新路888号 邮编510000",
+                info_addr_title: "公司名称", info_addr: "伊莱斯勒海南贸易有限公司 - 海南, 中国",
                 info_phone_title: "联系电话", info_hours_title: "工作时间",
                 info_hours: "周一至周五: 上午9:00 - 下午6:00 (北京时间)",
-                footer_copy: "© 2026 环球贸易通 版权所有",
+                footer_copy: "© 2026 伊莱斯勒海南贸易有限公司 版权所有",
                 footer_privacy: "隐私政策", footer_terms: "服务条款", footer_contact: "联系我们"
             }
         };
