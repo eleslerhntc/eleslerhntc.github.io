@@ -126,6 +126,7 @@
         .info-card{display:flex;gap:16px;padding:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);transition:var(--transition)}.info-card:hover{background:rgba(255,255,255,.08);transform:translateX(4px)}
         .info-icon{width:48px;height:48px;background:rgba(230,126,34,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
         .info-text h4{font-size:1rem;font-weight:700;margin-bottom:4px}.info-text p{font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.5}
+        .info-highlight{background:rgba(230,126,34,.1)!important;border-color:rgba(230,126,34,.25)!important}.info-highlight h4{color:var(--accent)!important}.info-highlight p{color:rgba(255,255,255,.85)!important}
 
         .footer{background:#0d1117;padding:50px 0}
         .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
@@ -334,7 +335,8 @@
                     <button class="btn-submit" data-i18n="f_submit">🚀 Send Inquiry</button>
                 </div>
                 <div class="contact-info fade-in">
-                    <div class="info-card"><div class="info-icon">🏢</div><div class="info-text"><h4>Elesler Hainan Trading Co.,Ltd</h4><p>Hainan, China</p></div></div>
+                    <div class="info-card info-highlight"><div class="info-icon">📍</div><div class="info-text"><h4 data-i18n="info_hn_title">Hainan Headquarters</h4><p data-i18n="info_hn_addr">Room 18D-5, 18F, Xingcheng Building, No.51-1 Haixiu Middle Road, Longhua District, Haikou, Hainan, China</p></div></div>
+                    <div class="info-card info-highlight"><div class="info-icon">📍</div><div class="info-text"><h4 data-i18n="info_tj_title">Tianjin Office</h4><p data-i18n="info_tj_addr">Room 515, Building 2, Chenmei Commercial Plaza, Gaofeng Road, Beichen District, Tianjin</p></div></div>
                     <div class="info-card"><div class="info-icon">📧</div><div class="info-text"><h4>Email</h4><p>ylsl_hntc@126.com</p></div></div>
                     <div class="info-card"><div class="info-icon">📞</div><div class="info-text"><h4 data-i18n="info_phone_title">Phone</h4><p>130-1139-2747 / 130-1139-2941</p></div></div>
                     <div class="info-card"><div class="info-icon">💬</div><div class="info-text"><h4>WhatsApp / WeChat</h4><p>130-1139-2747 / 130-1139-2941</p></div></div>
@@ -352,7 +354,7 @@
                 <div class="footer-col"><h4>Elesler Hainan Trading Co.,Ltd</h4><p data-i18n="footer_about">Professional international trading company headquartered in Hainan, China. Specializing in China-Russia trade with VTB Bank direct settlement.</p><div class="footer-social"><a href="#" title="WhatsApp">💬</a><a href="#" title="WeChat">💚</a><a href="#" title="Email">📧</a></div></div>
                 <div class="footer-col"><h4 data-i18n="footer_quick">Quick Links</h4><a href="#home" data-i18n="nav_home">Home</a><a href="#services" data-i18n="nav_services">Services</a><a href="#about" data-i18n="nav_about">About</a><a href="#products" data-i18n="nav_products">Products</a></div>
                 <div class="footer-col"><h4 data-i18n="footer_more">More</h4><a href="#cases" data-i18n="nav_cases">Cases</a><a href="#contact" data-i18n="nav_contact">Contact</a><a href="#" data-i18n="footer_privacy">Privacy Policy</a><a href="#" data-i18n="footer_terms">Terms</a></div>
-                <div class="footer-col"><h4 data-i18n="footer_contact_us">Contact Us</h4><p>📧 ylsl_hntc@126.com</p><p>📞 130-1139-2747</p><p>📞 130-1139-2941</p><p>📍 Hainan, China</p></div>
+                <div class="footer-col"><h4 data-i18n="footer_contact_us">Contact Us</h4><p>📧 ylsl_hntc@126.com</p><p>📞 130-1139-2747 / 130-1139-2941</p><p>📍 <strong>Hainan HQ</strong>: Rm 18D-5, 18F, Xingcheng Bldg, No.51-1 Haixiu Mid Rd, Longhua Dist, Haikou, Hainan</p><p>📍 <strong>Tianjin</strong>: Rm 515, Bldg 2, Chenmei Commercial Plaza, Gaofeng Rd, Beichen District</p></div>
             </div>
             <div class="footer-bottom"><p>© 2026 Elesler Hainan Trading Co.,Ltd. All rights reserved.</p><p>Growing Together With Our Clients 🤝</p></div>
         </div>
@@ -423,7 +425,7 @@
             f_opt1:"Industrial & Machinery",f_opt2:"Construction Materials",f_opt3:"Electronics",
             f_opt4:"Chemical Products",f_opt5:"Home & Furniture",f_opt6:"Packaging Materials",f_opt7:"Other",
             f_message:"Message *",f_submit:"🚀 Send Inquiry",
-            info_phone_title:"Phone",info_hours_title:"Business Hours",info_hours:"Mon - Fri: 9:00 AM - 6:00 PM (GMT+8)",info_vtb:"Corporate Account Available",
+            info_phone_title:"Phone",info_hours_title:"Business Hours",info_hours:"Mon - Fri: 9:00 AM - 6:00 PM (GMT+8)",info_vtb:"Corporate Account Available",info_hn_title:"Hainan Headquarters",info_hn_addr:"Room 18D-5, 18F, Xingcheng Building, No.51-1 Haixiu Middle Road, Longhua District, Haikou, Hainan, China",info_tj_title:"Tianjin Office",info_tj_addr:"Room 515, Building 2, Chenmei Commercial Plaza, Gaofeng Road, Beichen District, Tianjin",
             footer_about:"Professional international trading company headquartered in Hainan, China. Specializing in China-Russia trade with VTB Bank direct settlement.",
             footer_quick:"Quick Links",footer_more:"More",footer_contact_us:"Contact Us",footer_privacy:"Privacy Policy",footer_terms:"Terms of Service"
         },zh:{
@@ -488,7 +490,7 @@
             f_opt1:"工业与机械",f_opt2:"建筑材料",f_opt3:"电子产品",
             f_opt4:"化工产品",f_opt5:"家居与家具",f_opt6:"包装材料",f_opt7:"其他",
             f_message:"留言 *",f_submit:"🚀 发送询盘",
-            info_phone_title:"电话",info_hours_title:"工作时间",info_hours:"周一至周五: 9:00-18:00 (北京时间)",info_vtb:"企业账户可用",
+            info_phone_title:"电话",info_hours_title:"工作时间",info_hours:"周一至周五: 9:00-18:00 (北京时间)",info_vtb:"企业账户可用",info_hn_title:"海南总部",info_hn_addr:"海南省海口市龙华区大同街道海秀中路51-1号星城大厦第18层18D号-5房",info_tj_title:"天津办事处",info_tj_addr:"天津市北辰区高峰路辰美商业广场2号楼515室",
             footer_about:"总部位于中国海南的专业国际贸易公司，专注中俄贸易，VTB银行直接结算。",
             footer_quick:"快速导航",footer_more:"更多",footer_contact_us:"联系我们",footer_privacy:"隐私政策",footer_terms:"服务条款"
         }};
