@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Manufacturing & Trading Company - Quality Products, Global Service">
+    <title>GlobalTrade Pro | 全球贸易专家</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+    <style>
+        /* ============================================
+           CSS VARIABLES & RESET
+           ============================================ */
+        :root {
+            --primary: #1a5276;
+            --primary-light: #2980b9;
+            --accent: #e67e22;
+            --accent-hover: #d35400;
+            --dark: #1a1a2e;
+            --dark2: #16213e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+            --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        body {
+            font-family: var(--font);
+            color: var(--dark);
+            line-height: 1.7;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--light);
+            border-radius: 20px;
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            background: transparent;
+            color: var(--gray);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2.5px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 50%, var(--primary) 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 72px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px;
+            padding: 8px 20px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent), #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0;
+        }
+
+        .hero-visual {
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(230,126,34,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(26,82,118,0.08);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           ADVANTAGES
+           ============================================ */
+        .advantages {
+            background: var(--light);
+        }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .adv-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+        }
+
+        .adv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .adv-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(26,82,118,0.08), rgba(41,128,185,0.08));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .adv-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .adv-card p {
+            font-size: 0.92rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           PRODUCTS
+           ============================================ */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .product-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-img {
+            height: 220px;
+            background: linear-gradient(135deg, #e8e8e8, #d0d0d0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.05));
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-category {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .product-specs {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .spec-tag {
+            font-size: 0.78rem;
+            padding: 4px 10px;
+            background: var(--light);
+            border-radius: 6px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           ABOUT
+           ============================================ */
+        .about-section {
+            background: var(--light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-img-main {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-img-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px 28px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .about-img-badge h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .about-img-badge p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            color: var(--gray);
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid var(--gray-light);
+        }
+
+        .about-feature-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .about-feature span {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* ============================================
+           CASES
+           ============================================ */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .case-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .case-header {
+            padding: 28px 28px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .case-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .case-meta h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .case-meta p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .case-body {
+            padding: 20px 28px;
+        }
+
+        .case-body p {
+            font-size: 0.95rem;
+            color: var(--dark);
+            line-height: 1.7;
+            font-style: italic;
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .case-footer {
+            padding: 0 28px 28px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .case-tag {
+            font-size: 0.78rem;
+            padding: 4px 12px;
+            background: rgba(26,82,118,0.06);
+            color: var(--primary);
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           CONTACT
+           ============================================ */
+        .contact-section {
+            background: var(--dark);
+            color: white;
+        }
+
+        .contact-section .section-header h2 {
+            color: white;
+        }
+
+        .contact-section .section-header p {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .contact-section .section-tag {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            padding: 36px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 0.95rem;
+            font-family: var(--font);
+            transition: var(--transition);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-hover);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .info-card {
+            display: flex;
+            gap: 16px;
+            padding: 24px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(4px);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(230,126,34,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .info-text h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .info-text p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: #0d1117;
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.5);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 2.5rem; }
+            .adv-grid { grid-template-columns: repeat(2, 1fr); }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .cases-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-stats { gap: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: flex; }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 24px;
+                gap: 16px;
+                box-shadow: var(--shadow);
+                border-bottom: 1px solid var(--gray-light);
+            }
+
+            .hero { min-height: auto; padding: 120px 0 80px; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .hero-visual { display: none; }
+
+            .adv-grid { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-features { grid-template-columns: 1fr; }
+            .about-img-badge { bottom: 10px; right: 10px; }
+
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+
+            .section-header h2 { font-size: 1.8rem; }
+            section { padding: 60px 0; }
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           SCROLL TO TOP
+           ============================================ */
+        .scroll-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(230,126,34,0.4);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent-hover);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                <div class="logo-icon">🌐</div>
+                <span data-i18n="logo">GlobalTrade Pro</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" data-i18n="nav_home">Home</a>
+                <a href="#about" data-i18n="nav_about">About</a>
+                <a href="#products" data-i18n="nav_products">Products</a>
+                <a href="#cases" data-i18n="nav_cases">Cases</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobile()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🌍 <span data-i18n="hero_badge">Serving Global Clients Since 2010</span></div>
+                <h1 data-i18n="hero_title">Connecting <span data-i18n="hero_highlight">China's Best</span> <span data-i18n="hero_title2">to the World</span></h1>
+                <p data-i18n="hero_desc">We are a professional manufacturing and trading company committed to delivering high-quality products and reliable services to global partners. From concept to delivery, we make international trade simple.</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary" data-i18n="hero_btn1">📦 Explore Products</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="hero_btn2">💬 Get a Quote</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p data-i18n="stat_countries">Countries Served</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p data-i18n="stat_clients">Global Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p data-i18n="stat_years">Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p data-i18n="stat_rate">On-time Delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual"></div>
+    </section>
+
+    <!-- ADVANTAGES -->
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag" data-i18n="adv_tag">Why Choose Us</div>
+                <h2 data-i18n="adv_title">Our Core Advantages</h2>
+                <p data-i18n="adv_desc">We combine manufacturing expertise with trading professionalism to deliver exceptional value</p>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-card fade-in">
+                    <div class="adv-icon">🏭</div>
+                    <h3 data-i18n="adv1_title">Direct Factory</h3>
+                    <p data-i18n="adv1_desc">Own manufacturing base with full production control, eliminating middlemen costs</p>
+                </div>
+                <div class="adv-card fade-in">
+                    <div class="adv-icon">✅</div>
+                    <h3 data-i18n="adv2_title">Quality Certified</h3>
+                    <p data-i18n="adv2_desc">ISO 9001 certified with strict QC process at every production stage</p>
+                </div>
+                <div class="adv-card fade-in">
+                    <div class="adv-icon">🚚</div>
+                    <h3 data-i18n="adv3_title">Global Logistics</h3>
+                    <p data-i18n="adv3_desc">Door-to-door delivery with FOB, CIF, DDP terms to any destination worldwide</p>
+                </div>
+                <div class="adv-card fade-in">
+                    <div class="adv-icon">🤝</div>
+                    <h3 data-i18n="adv4_title">OEM/ODM Service</h3>
+                    <p data-i18n="adv4_desc">Custom design, branding, and packaging to match your market needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag" data-i18n="prod_tag">Product Line</div>
+                <h2 data-i18n="prod_title">Featured Products</h2>
+                <p data-i18n="prod_desc">Explore our comprehensive range of quality manufactured products</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card fade-in">
+                    <div class="product-img">⚙️</div>
+                    <div class="product-info">
+                        <div class="product-category" data-i18n="p1_cat">Industrial Parts</div>
+                        <h3 data-i18n="p1_title">Precision Components</h3>
+                        <p data-i18n="p1_desc">CNC machined parts with tolerances up to ±0.01mm for industrial applications</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">CNC</span>
+                            <span class="spec-tag">±0.01mm</span>
+                            <span class="spec-tag">ISO 9001</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-img">🔌</div>
+                    <div class="product-info">
+                        <div class="product-category" data-i18n="p2_cat">Electronic</div>
+                        <h3 data-i18n="p2_title">Smart Devices</h3>
+                        <p data-i18n="p2_desc">IoT-enabled smart devices with custom firmware and OEM branding support</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">IoT</span>
+                            <span class="spec-tag">OEM</span>
+                            <span class="spec-tag">CE/FCC</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-img">🔧</div>
+                    <div class="product-info">
+                        <div class="product-category" data-i18n="p3_cat">Hardware Tools</div>
+                        <h3 data-i18n="p3_title">Professional Tools</h3>
+                        <p data-i18n="p3_desc">High-durability hand tools and power tools for professional and industrial use</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">Chrome Vanadium</span>
+                            <span class="spec-tag">Lifetime Warranty</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-img">🏗️</div>
+                    <div class="product-info">
+                        <div class="product-category" data-i18n="p4_cat">Construction</div>
+                        <h3 data-i18n="p4_title">Building Materials</h3>
+                        <p data-i18n="p4_desc">Premium quality construction materials including steel, fittings, and accessories</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">ASTM Standard</span>
+                            <span class="spec-tag">Bulk Supply</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-img">📦</div>
+                    <div class="product-info">
+                        <div class="product-category" data-i18n="p5_cat">Packaging</div>
+                        <h3 data-i18n="p5_title">Custom Packaging</h3>
+                        <p data-i18n="p5_desc">Eco-friendly packaging solutions with custom printing and branding options</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">Eco-Friendly</span>
+                            <span class="spec-tag">Custom Print</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-img">🪑</div>
+                    <div class="product-info">
+                        <div class="product-category" data-i18n="p6_cat">Furniture</div>
+                        <h3 data-i18n="p6_title">Office & Industrial</h3>
+                        <p data-i18n="p6_desc">Ergonomic office and industrial furniture with modern design and durability</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">Ergonomic</span>
+                            <span class="spec-tag">BIFMA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual fade-in">
+                    <div class="about-img-main">🏭</div>
+                    <div class="about-img-badge">
+                        <h3>15+</h3>
+                        <p data-i18n="about_badge">Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <div class="section-tag" data-i18n="about_tag">About Us</div>
+                    <h2 data-i18n="about_title">Your Trusted Partner in Global Trade</h2>
+                    <p data-i18n="about_desc1">Founded in 2010, GlobalTrade Pro has grown from a small trading office into a comprehensive manufacturing and trading enterprise. We bridge the gap between Chinese manufacturing excellence and global market demands.</p>
+                    <p data-i18n="about_desc2">With a modern factory spanning 20,000 sqm, 200+ skilled workers, and a dedicated export team, we handle everything from product development to international logistics.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="about-feature-icon">📍</span>
+                            <span data-i18n="af1">20,000 sqm Factory</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="about-feature-icon">👥</span>
+                            <span data-i18n="af2">200+ Employees</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="about-feature-icon">📋</span>
+                            <span data-i18n="af3">ISO 9001 Certified</span>
+                        </div>
+                        <div class="about-feature">
+                            <span class="about-feature-icon">🏆</span>
+                            <span data-i18n="af4">Top 100 Exporter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASES -->
+    <section class="cases" id="cases">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag" data-i18n="case_tag">Success Stories</div>
+                <h2 data-i18n="case_title">Client Testimonials</h2>
+                <p data-i18n="case_desc">Hear from our partners around the world</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <div class="case-avatar">JM</div>
+                        <div class="case-meta">
+                            <h3>James Mitchell</h3>
+                            <p data-i18n="c1_meta">Procurement Director, USA</p>
+                        </div>
+                    </div>
+                    <div class="case-body">
+                        <p data-i18n="c1_quote">"Their quality control is exceptional. We've been sourcing precision parts for 5 years with zero defects. The team understands our specifications perfectly."</p>
+                    </div>
+                    <div class="case-footer">
+                        <span class="case-tag">Precision Parts</span>
+                        <span class="case-tag">5-Year Partner</span>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <div class="case-avatar">SK</div>
+                        <div class="case-meta">
+                            <h3>Sarah Kim</h3>
+                            <p data-i18n="c2_meta">CEO, Germany</p>
+                        </div>
+                    </div>
+                    <div class="case-body">
+                        <p data-i18n="c2_quote">"Moving our production here saved us 35% in costs without compromising quality. Their OEM service helped us launch our own brand successfully."</p>
+                    </div>
+                    <div class="case-footer">
+                        <span class="case-tag">OEM Partner</span>
+                        <span class="case-tag">Cost Saving</span>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <div class="case-avatar">AH</div>
+                        <div class="case-meta">
+                            <h3>Ahmed Hassan</h3>
+                            <p data-i18n="c3_meta">Trade Manager, UAE</p>
+                        </div>
+                    </div>
+                    <div class="case-body">
+                        <p data-i18n="c3_quote">"Reliable delivery every time. They handle all the export documentation and logistics, making our import process completely hassle-free."</p>
+                    </div>
+                    <div class="case-footer">
+                        <span class="case-tag">Full Service</span>
+                        <span class="case-tag">Middle East</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag" data-i18n="contact_tag">Get in Touch</div>
+                <h2 data-i18n="contact_title">Start Your Inquiry Today</h2>
+                <p data-i18n="contact_desc">We respond within 24 hours. Let's discuss how we can serve your needs.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form fade-in">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="f_name">Name *</label>
+                            <input type="text" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="f_company">Company *</label>
+                            <input type="text" placeholder="ABC Trading Co." required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="f_email">Email *</label>
+                            <input type="email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="f_phone">Phone</label>
+                            <input type="tel" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="f_interest">Product Interest</label>
+                        <select>
+                            <option value="" data-i18n="f_select">Select product category...</option>
+                            <option data-i18n="f_opt1">Precision Components</option>
+                            <option data-i18n="f_opt2">Smart Devices</option>
+                            <option data-i18n="f_opt3">Professional Tools</option>
+                            <option data-i18n="f_opt4">Building Materials</option>
+                            <option data-i18n="f_opt5">Custom Packaging</option>
+                            <option data-i18n="f_opt6">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="f_message">Message *</label>
+                        <textarea placeholder="Tell us about your requirements..." required></textarea>
+                    </div>
+                    <button class="btn-submit" data-i18n="f_submit">🚀 Send Inquiry</button>
+                </div>
+                <div class="contact-info fade-in">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4 data-i18n="info_addr_title">Address</h4>
+                            <p data-i18n="info_addr">No. 888 Innovation Road, Industrial Zone, Guangzhou, China 510000</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>trade@globaltradepro.com</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4 data-i18n="info_phone_title">Phone</h4>
+                            <p>+86 20 8888 6666</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">💬</div>
+                        <div class="info-text">
+                            <h4>WhatsApp</h4>
+                            <p>+86 138 0000 8888</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕐</div>
+                        <div class="info-text">
+                            <h4 data-i18n="info_hours_title">Business Hours</h4>
+                            <p data-i18n="info_hours">Mon - Fri: 9:00 AM - 6:00 PM (GMT+8)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p data-i18n="footer_copy">© 2026 GlobalTrade Pro. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="footer_terms">Terms of Service</a>
+                    <a href="#contact" data-i18n="footer_contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0})">↑</button>
+
+    <script>
+        // ============================================
+        // I18N - BILINGUAL SUPPORT
+        // ============================================
+        const translations = {
+            en: {
+                logo: "GlobalTrade Pro",
+                nav_home: "Home",
+                nav_about: "About",
+                nav_products: "Products",
+                nav_cases: "Cases",
+                nav_contact: "Contact",
+                hero_badge: "Serving Global Clients Since 2010",
+                hero_title: "Connecting",
+                hero_highlight: "China's Best",
+                hero_title2: "to the World",
+                hero_desc: "We are a professional manufacturing and trading company committed to delivering high-quality products and reliable services to global partners. From concept to delivery, we make international trade simple.",
+                hero_btn1: "📦 Explore Products",
+                hero_btn2: "💬 Get a Quote",
+                stat_countries: "Countries Served",
+                stat_clients: "Global Clients",
+                stat_years: "Years Experience",
+                stat_rate: "On-time Delivery",
+                adv_tag: "Why Choose Us",
+                adv_title: "Our Core Advantages",
+                adv_desc: "We combine manufacturing expertise with trading professionalism to deliver exceptional value",
+                adv1_title: "Direct Factory",
+                adv1_desc: "Own manufacturing base with full production control, eliminating middlemen costs",
+                adv2_title: "Quality Certified",
+                adv2_desc: "ISO 9001 certified with strict QC process at every production stage",
+                adv3_title: "Global Logistics",
+                adv3_desc: "Door-to-door delivery with FOB, CIF, DDP terms to any destination worldwide",
+                adv4_title: "OEM/ODM Service",
+                adv4_desc: "Custom design, branding, and packaging to match your market needs",
+                prod_tag: "Product Line",
+                prod_title: "Featured Products",
+                prod_desc: "Explore our comprehensive range of quality manufactured products",
+                p1_cat: "Industrial Parts", p1_title: "Precision Components", p1_desc: "CNC machined parts with tolerances up to ±0.01mm for industrial applications",
+                p2_cat: "Electronic", p2_title: "Smart Devices", p2_desc: "IoT-enabled smart devices with custom firmware and OEM branding support",
+                p3_cat: "Hardware Tools", p3_title: "Professional Tools", p3_desc: "High-durability hand tools and power tools for professional and industrial use",
+                p4_cat: "Construction", p4_title: "Building Materials", p4_desc: "Premium quality construction materials including steel, fittings, and accessories",
+                p5_cat: "Packaging", p5_title: "Custom Packaging", p5_desc: "Eco-friendly packaging solutions with custom printing and branding options",
+                p6_cat: "Furniture", p6_title: "Office & Industrial", p6_desc: "Ergonomic office and industrial furniture with modern design and durability",
+                about_tag: "About Us",
+                about_title: "Your Trusted Partner in Global Trade",
+                about_desc1: "Founded in 2010, GlobalTrade Pro has grown from a small trading office into a comprehensive manufacturing and trading enterprise. We bridge the gap between Chinese manufacturing excellence and global market demands.",
+                about_desc2: "With a modern factory spanning 20,000 sqm, 200+ skilled workers, and a dedicated export team, we handle everything from product development to international logistics.",
+                about_badge: "Years of Excellence",
+                af1: "20,000 sqm Factory", af2: "200+ Employees", af3: "ISO 9001 Certified", af4: "Top 100 Exporter",
+                case_tag: "Success Stories",
+                case_title: "Client Testimonials",
+                case_desc: "Hear from our partners around the world",
+                c1_meta: "Procurement Director, USA", c1_quote: "\"Their quality control is exceptional. We've been sourcing precision parts for 5 years with zero defects. The team understands our specifications perfectly.\"",
+                c2_meta: "CEO, Germany", c2_quote: "\"Moving our production here saved us 35% in costs without compromising quality. Their OEM service helped us launch our own brand successfully.\"",
+                c3_meta: "Trade Manager, UAE", c3_quote: "\"Reliable delivery every time. They handle all the export documentation and logistics, making our import process completely hassle-free.\"",
+                contact_tag: "Get in Touch",
+                contact_title: "Start Your Inquiry Today",
+                contact_desc: "We respond within 24 hours. Let's discuss how we can serve your needs.",
+                f_name: "Name *", f_company: "Company *", f_email: "Email *", f_phone: "Phone",
+                f_interest: "Product Interest", f_select: "Select product category...",
+                f_opt1: "Precision Components", f_opt2: "Smart Devices", f_opt3: "Professional Tools",
+                f_opt4: "Building Materials", f_opt5: "Custom Packaging", f_opt6: "Other",
+                f_message: "Message *", f_submit: "🚀 Send Inquiry",
+                info_addr_title: "Address", info_addr: "No. 888 Innovation Road, Industrial Zone, Guangzhou, China 510000",
+                info_phone_title: "Phone", info_hours_title: "Business Hours",
+                info_hours: "Mon - Fri: 9:00 AM - 6:00 PM (GMT+8)",
+                footer_copy: "© 2026 GlobalTrade Pro. All rights reserved.",
+                footer_privacy: "Privacy Policy", footer_terms: "Terms of Service", footer_contact: "Contact Us"
+            },
+            zh: {
+                logo: "环球贸易通",
+                nav_home: "首页",
+                nav_about: "关于我们",
+                nav_products: "产品中心",
+                nav_cases: "客户案例",
+                nav_contact: "联系我们",
+                hero_badge: "自2010年起服务全球客户",
+                hero_title: "连接",
+                hero_highlight: "中国制造",
+                hero_title2: "，通达全球",
+                hero_desc: "我们是一家专业的制造贸易企业，致力于为全球合作伙伴提供高品质产品和可靠服务。从概念到交付，让国际贸易变得简单。",
+                hero_btn1: "📦 浏览产品",
+                hero_btn2: "💬 获取报价",
+                stat_countries: "服务国家",
+                stat_clients: "全球客户",
+                stat_years: "年行业经验",
+                stat_rate: "准时交付率",
+                adv_tag: "为什么选择我们",
+                adv_title: "核心优势",
+                adv_desc: "我们融合制造专业与贸易经验，为客户创造卓越价值",
+                adv1_title: "工厂直供",
+                adv1_desc: "自有生产基地，全程品质把控，省去中间环节成本",
+                adv2_title: "质量认证",
+                adv2_desc: "通过ISO 9001认证，每个生产环节严格品控",
+                adv3_title: "全球物流",
+                adv3_desc: "支持FOB、CIF、DDP等多种贸易条款，全球门到门交付",
+                adv4_title: "OEM/ODM服务",
+                adv4_desc: "定制设计、品牌包装，满足不同市场需求",
+                prod_tag: "产品线",
+                prod_title: "精选产品",
+                prod_desc: "探索我们全方位的优质制造产品",
+                p1_cat: "工业零件", p1_title: "精密零部件", p1_desc: "CNC精加工零件，公差达±0.01mm，适用于各类工业场景",
+                p2_cat: "电子产品", p2_title: "智能设备", p2_desc: "IoT智能设备，支持定制固件和OEM品牌贴牌",
+                p3_cat: "五金工具", p3_title: "专业工具", p3_desc: "高品质手动和电动工具，适合专业和工业使用",
+                p4_cat: "建筑材料", p4_title: "建材产品", p4_desc: "优质建材，包括钢材、配件和各类五金附件",
+                p5_cat: "包装", p5_title: "定制包装", p5_desc: "环保包装方案，支持定制印刷和品牌包装",
+                p6_cat: "家具", p6_title: "办公与工业家具", p6_desc: "人体工学办公和工业家具，现代设计，经久耐用",
+                about_tag: "关于我们",
+                about_title: "值得信赖的全球贸易伙伴",
+                about_desc1: "成立于2010年，环球贸易通从一个小贸易公司成长为综合性制造贸易企业。我们架起了中国制造优势与全球市场需求之间的桥梁。",
+                about_desc2: "拥有20,000平方米现代化厂房、200多名技术工人和专业出口团队，从产品研发到国际物流，我们全流程负责。",
+                about_badge: "年卓越经营",
+                af1: "2万平米工厂", af2: "200+名员工", af3: "ISO 9001认证", af4: "百强出口企业",
+                case_tag: "成功故事",
+                case_title: "客户好评",
+                case_desc: "来自全球合作伙伴的真实评价",
+                c1_meta: "采购总监，美国", c1_quote: ""他们的品控非常出色。我们合作5年采购精密零件，零缺陷。团队完全理解我们的技术要求。"",
+                c2_meta: "CEO，德国", c2_quote: ""将生产转移到这里为我们节省了35%的成本，且品质不减。OEM服务帮助我们成功推出了自有品牌。"",
+                c3_meta: "贸易经理，阿联酋", c3_quote: ""每次交付都很准时。他们处理所有出口文件和物流，让我们的进口流程完全无忧。"",
+                contact_tag: "联系我们",
+                contact_title: "立即发起询盘",
+                contact_desc: "我们将在24小时内回复。让我们聊聊如何服务您的需求。",
+                f_name: "姓名 *", f_company: "公司 *", f_email: "邮箱 *", f_phone: "电话",
+                f_interest: "产品意向", f_select: "选择产品类别...",
+                f_opt1: "精密零部件", f_opt2: "智能设备", f_opt3: "专业工具",
+                f_opt4: "建材产品", f_opt5: "定制包装", f_opt6: "其他",
+                f_message: "留言 *", f_submit: "🚀 发送询盘",
+                info_addr_title: "公司地址", info_addr: "中国广州市工业区创新路888号 邮编510000",
+                info_phone_title: "联系电话", info_hours_title: "工作时间",
+                info_hours: "周一至周五: 上午9:00 - 下午6:00 (北京时间)",
+                footer_copy: "© 2026 环球贸易通 版权所有",
+                footer_privacy: "隐私政策", footer_terms: "服务条款", footer_contact: "联系我们"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            // Update toggle buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', 
+                    (lang === 'en' && btn.textContent === 'EN') || 
+                    (lang === 'zh' && btn.textContent === '中文')
+                );
+            });
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else if (el.tagName === 'OPTION') {
+                        el.textContent = translations[lang][key];
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        // ============================================
+        // NAVBAR SCROLL
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            scrollTop.classList.toggle('visible', window.scrollY > 500);
+        });
+
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        function toggleMobile() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ============================================
+        // SCROLL ANIMATIONS
+        // ============================================
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ============================================
+        // FORM SUBMISSION (placeholder)
+        // ============================================
+        document.querySelector('.btn-submit')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const msg = currentLang === 'zh' 
+                ? '✅ 询盘已提交！我们将在24小时内与您联系。' 
+                : '✅ Inquiry submitted! We will contact you within 24 hours.';
+            alert(msg);
+        });
+    </script>
+</body>
+</html>
